@@ -1,0 +1,14 @@
+.nav-list-item {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 130%;
+	color: var(--color-text-header);
+
+	&:hover {
+		color: var(--color-text-selected);
+	}
+
+	.active {
+		color: var(--color-text-selected);
+	}
+}

@@ -1,0 +1,38 @@
+.tag-filter {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	h2 {
+		font-weight: 700;
+		font-size: 13px;
+	}
+
+	button {
+		display: flex;
+		align-items: center;
+
+		span {
+			font-style: 13px;
+			font-weight: 700;
+		}
+	}
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		h2,
+		button span {
+			font-size: 14px;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		h2,
+		button span {
+			font-size: 15px;
+		}
+	}
+}
