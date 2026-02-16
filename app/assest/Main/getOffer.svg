@@ -1,0 +1,11 @@
+<svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="139" height="139" rx="69.5" stroke="#D4AF37" stroke-opacity="0.5"/>
+<foreignObject x="-5" y="-5" width="150" height="150"><div xmlns="http://www.w3.org/1999/xhtml" style="clip-path:url(#bgblur_0_1_7985_clip_path);height:100%;width:100%"></div></foreignObject><g>
+
+<rect x="10.5" y="10.5" width="119" height="119" rx="59.5" stroke="#D4AF37"/>
+<path d="M65.832 56.8333h8.3334m0 0v8.3333m0-8.3333-8.3334 8.3333" stroke="white" stroke-width="1.35" stroke-linejoin="miter" stroke-miterlimit="50" stroke-linecap="round"/>
+</g>
+<defs>
+<clipPath id="bgblur_0_1_7985_clip_path" transform="translate(5 5)"><rect x="10.5" y="10.5" width="119" height="119" rx="59.5"/>
+</clipPath></defs>
+</svg>

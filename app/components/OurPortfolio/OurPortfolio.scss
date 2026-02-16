@@ -1,0 +1,325 @@
+@import '../../[lang]/app.scss';
+
+$gold: #d4af37;
+
+.our-portfolio-container {
+  @include responsive-width;
+  @include margin-page;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 100vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    overflow-x: clip;
+  }
+
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 0 25px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    height: 60px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: 0.3s;
+    
+
+    &:hover {
+      background: $gold;
+      color: #000;
+      border-color: transparent;
+    }
+  }
+
+  @media (max-width: 1150px) {
+    .contact-btn{
+      justify-content: space-between;
+      width: 100%;
+    }
+    .contact-btn:hover {
+      background: transparent;
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    h2 {
+      font-size: 46px;
+      text-transform: uppercase;
+      color: $gold;
+      font-weight: 700;
+      margin: 0;
+      @media (max-width: 768px) {
+        font-size: 22px;
+      }
+    }
+
+    .contact-btn {
+      @media (max-width: 1150px) {
+        display: none;
+      }
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .mobile-contact-btn {
+    display: none;
+    margin: 20px auto 0;
+
+    @media (max-width: 1150px) {
+      display: flex;
+    }
+  }
+
+  .list-portfolio {
+    position: relative;
+    margin-top: 30px;
+    .portfolio-slider {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      overscroll-behavior-x: contain;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .portfolio-item {
+        // Розрахунок: (100% - (кількість проміжків * gap)) / кількість карток
+        flex: 0 0 calc((100%) / 3); // 40px - це сума двох gap по 20px
+        aspect-ratio: 467 / 570;
+        position: relative;
+        scroll-snap-align: start;
+        overflow: hidden;
+
+        @media (max-width: 1024px) {
+          flex: 0 0 calc((100%) / 2); // Планшет (2 картки)
+        }
+
+        @media (max-width: 650px) {
+          flex: 0 0 100%;
+          width: 100%;
+          max-width: 100%;
+          box-sizing: border-box;
+        }
+
+        .image-wrapper {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          transition: transform 0.5s ease;
+          img {
+            opacity: 0.8;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+          }
+        }
+
+        .beck-blur {
+          position: absolute;
+          inset: 15px;
+          z-index: 2;
+          backdrop-filter: blur(20px);
+          background-color: rgba(12, 12, 12, 0.2);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .item-overlay {
+          position: absolute;
+          inset: 0;
+          z-index: 3;
+          padding: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          // background: linear-gradient(
+          //   to top,
+          //   rgba(0, 0, 0, 0.9) 0%,
+          //   transparent 60%
+          // );
+
+          @media (max-width: 768px) {
+            padding: 20px;
+          }
+        }
+
+        .item-title,
+        .item-category,
+        .visit-btn {
+          z-index: 4;
+          transition: 0.4s ease;
+          // На мобілці можна зробити контент завжди видимим або залишити ховер
+          @media (min-width: 1025px) {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+        }
+
+        .item-title {
+          font-size: 28px;
+          color: $gold;
+          margin-bottom: 15px;
+          text-transform: uppercase;
+        }
+
+        .item-category {
+          color: #fff;
+          border: 1px solid $gold;
+          padding: 6px 15px;
+          font-size: 13px;
+          margin-bottom: 25px;
+          width: fit-content;
+        }
+
+        .visit-btn {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: $gold;
+          color: #000;
+          border: 2px solid transparent;
+          padding: 12px 20px;
+          font-weight: 700;
+          width: 70%;
+          margin-top: 20px;
+          cursor: pointer;
+          transition: 0.3s;
+          &:hover {
+            background: transparent;
+            border-color: #ffffff;
+            color: #ffffff;
+          }
+        }
+
+        @media (max-width: 1150px) {
+          .item-title,
+          .item-category,
+          .visit-btn {
+            opacity: 1;
+            transform: none;
+          }
+
+          .visit-btn:hover {
+            background: $gold;
+            color: #000;
+            border-color: transparent;
+          }
+
+          &:hover {
+            .image-wrapper {
+              transform: none;
+            }
+            .beck-blur {
+              opacity: 0;
+            }
+          }
+        }
+
+        &:hover {
+          @media (min-width: 1025px) {
+            .image-wrapper {
+              transform: scale(1.08);
+            }
+            .beck-blur {
+              opacity: 1;
+            }
+            .item-title,
+            .item-category,
+            .visit-btn {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav-arrow {
+    @media (max-width: 1024px) {
+      display: none !important;
+    } // Ховаємо стрілки на тач-пристроях
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid $gold;
+    color: $gold;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &.prev {
+      left: -22.5px;
+    }
+    &.next {
+      right: -22.5px;
+    }
+    &.active {
+      &:hover {
+        background: transparent !important;
+        border-color: #ffffff !important;
+        color: #ffffff !important;
+      }
+    }
+  }
+
+  @media (max-width: 1150px) {
+    .nav-arrow.active:hover {
+      background: rgba(0, 0, 0, 0.6) !important;
+      border-color: $gold !important;
+      color: $gold !important;
+    }
+  }
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 35px;
+  @media (max-width: 768px) {
+    margin-top: 25px;
+  }
+  .dot {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+}

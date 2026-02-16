@@ -1,0 +1,521 @@
+@keyframes spin-gear {
+  from {
+    // ВАЖЛИВО: ми повторюємо початковий зсув, щоб він не скидався
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.main-animation-container {
+  max-width: 870px;
+  width: 50%;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    zoom: 0.6;
+    height: 69vh;
+  }
+
+  @media (max-width: 500px) {
+    --small-circles-shift-x: -10px;
+    --small-circles-shift-y: 15px;
+  }
+
+  .big-circle {
+    position: absolute;
+    left: 25%;
+    top: 27%;
+
+    img {
+      width: 70%;
+      height: auto;
+    }
+
+    //animation: floatSide 6s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .elem-spin {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+
+    &.elem-spin2 {
+      top: 73%;
+      left: 18%;
+    }
+
+    &.elem-spin3 {
+      top: 40%;
+      left: 80%;
+    }
+
+    @media (max-width: 500px) {
+
+      /* main container uses zoom: 0.6 on small screens; set size so the *visible* svg width is 52px */
+      &:not(.elem-spin2):not(.elem-spin3) {
+        /* slight nudge down/right (compensates for zoom: 0.6 -> visible shift is smaller) */
+        transform: translate(50px, 20px);
+
+        .spin {
+          >svg {
+            width: 86.6667px;
+            /* 52 / 0.6 */
+            height: auto;
+            display: block;
+            overflow: visible;
+          }
+        }
+      }
+
+      &.elem-spin2 {
+        /* a bit lower + more left on mobile */
+        transform: translate(-10px, 25px);
+
+        /* target ~70px visible width under parent zoom: 0.6 */
+        .spin {
+          transform: scale(1.0234);
+          /* 70 / (114 * 0.6) */
+          transform-origin: 0 0;
+        }
+      }
+
+      &.elem-spin3 {
+        /* a bit lower + more left on mobile */
+        transform: translate(-12px, -5px);
+
+        /* target ~60px visible width under parent zoom: 0.6 */
+        .spin {
+          transform: scale(0.8772);
+          /* 60 / (114 * 0.6) */
+          transform-origin: 0 0;
+        }
+      }
+    }
+
+    .spin {
+      position: relative;
+      width: 114px;
+      height: 109px;
+
+      .full {
+        position: absolute;
+        top: -19.5%;
+        left: -15.29%;
+        z-index: 3;
+        opacity: 1;
+
+        path {
+          stroke: red;
+          fill: transparent;
+          stroke-width: 0.1px;
+        }
+      }
+
+      .up {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .up2 {
+        position: absolute;
+        left: 7%;
+        top: 13%;
+      }
+
+      .quater1 {
+        position: absolute;
+        top: 22.8%;
+        left: 17.9%;
+      }
+
+      .quater2 {
+        position: absolute;
+        top: 23.9%;
+        left: 58.9%;
+      }
+
+      .quater3 {
+        position: absolute;
+        top: 67%;
+        left: 42.75%;
+      }
+
+      .quater4 {
+        position: absolute;
+        top: 50.15%;
+        left: 16.75%;
+      }
+
+      .thin {
+        position: absolute;
+        top: 33%;
+        left: 26.6%;
+      }
+
+      .circle {
+        position: absolute;
+        top: 37.25%;
+        left: 31%;
+      }
+
+      .gear {
+        position: absolute;
+        // Використовуємо ваші координати
+        top: -19.5%;
+        left: -14.25%;
+
+        // Центруємо саму іконку відносно цієї точки
+        // translate(-50%, -50%) робить центр іконки ідеальною віссю обертання
+        //transform: translate(-50%, -50%);
+
+        // Запускаємо анімацію
+        //animation: spin-gear 4s linear infinite;
+
+        // Фіксуємо точку опори строго по центру
+        transform-origin: center center;
+
+        // Обов'язково для плавності (вмикає апаратне прискорення)
+        will-change: transform;
+
+        // Прибирає субпіксельне розмиття
+        backface-visibility: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .arrows {
+        position: absolute;
+        top: 51%;
+        left: 41.75%;
+      }
+
+      .square {
+        position: absolute;
+        top: 49.5%;
+        left: 41.75%;
+      }
+    }
+  }
+
+  .smoll-circle {
+    position: absolute;
+    top: 52%;
+    left: 11%;
+
+    @media (max-width: 500px) {
+      /* move same as `.the-smoll-circle` */
+      transform: translate(var(--small-circles-shift-x), var(--small-circles-shift-y));
+    }
+
+    img {
+      width: 12%;
+      height: auto;
+    }
+  }
+
+  .the-smoll-circle {
+    position: absolute;
+    top: 62%;
+    left: 21%;
+
+    @media (max-width: 500px) {
+      transform: translate(var(--small-circles-shift-x), var(--small-circles-shift-y));
+    }
+
+    img {
+      width: 7.5%;
+      height: auto;
+    }
+  }
+
+  .mini-big-circle {
+    position: absolute;
+    top: 19%;
+    left: 72%;
+
+    @media (max-width: 500px) {
+      /* move a bit left and up on mobile */
+      transform: translate(-20px, -20px);
+    }
+
+    img {
+      width: 60%;
+      height: auto;
+    }
+  }
+
+  .mini-get-offer {
+    position: absolute;
+    top: 26%;
+    left: 0;
+    z-index: 5;
+    display: block;
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 50%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      /* keep blur inside the inner circle (SVG inner ring is offset ~10px) */
+      inset: 10px;
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity 200ms ease;
+      z-index: 0;
+
+      /* hover blur (10–15% intensity via opacity) */
+      background: rgba(212, 175, 55, 0.15);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    svg {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: visible;
+    }
+
+    .miniGetOffer {
+      position: absolute;
+      top: 59%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 10px;
+      line-height: 130%;
+      letter-spacing: 0%;
+      text-align: center;
+      text-transform: uppercase;
+      color: #ffffff;
+      width: 110px;
+      z-index: 6;
+    }
+
+    @media (max-width: 500px) {
+      /* main container uses zoom: 0.6 on small screens; compensate so the *visible* size becomes 64x64 */
+      width: 106.6667px;
+      /* 64 / 0.6 */
+      height: 106.6667px;
+
+      /* the SVG contains a foreignObject with negative offsets; don't clip it */
+      overflow: visible;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* move the button right + down on mobile */
+      transform: translate(24px, 24px);
+
+      /* keep the icon fully visible inside the smaller circle */
+      svg {
+        width: 106.6667px;
+        height: 106.6667px;
+        flex: 0 0 106.6667px;
+
+        /* SVG has a foreignObject (-5..150) extending beyond the 140x140 viewBox; shrink content so nothing overflows */
+        transform: scale(0.7111);
+        /* 140 / 150 */
+        transform-origin: 50% 50%;
+      }
+
+      /* nudge the arrow up to leave more room for text */
+      svg path {
+        transform: translateY(-8px);
+        transform-box: fill-box;
+        transform-origin: center center;
+      }
+
+      /* center the label inside the circle */
+      .miniGetOffer {
+        display: flex;
+        position: absolute;
+        inset: 0;
+        transform: translate(10px, 23px);
+        width: auto;
+        padding: 0 8px;
+
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        white-space: normal;
+
+        /* parent is zoom: 0.6, so bump font a bit for readability */
+        font-size: 12px;
+        line-height: 1.15;
+      }
+
+      &::before {
+        inset: 4px;
+      }
+    }
+  }
+
+  .beck1 {
+    position: absolute;
+    top: 57%;
+    left: 10%;
+  }
+
+  .num-web {
+    position: absolute;
+    top: 72%;
+    left: 45%;
+    padding: 20px 40px;
+    border: 1px solid #d4af3712;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media (max-width: 1150px) {
+      padding: 15px 25px;
+      left: 39%;
+    }
+
+    p {
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 15px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-align: center;
+      vertical-align: middle;
+      color: #ffffff;
+
+      /* nudge the arrow a bit up (only the arrow path exists in this SVG) */
+      svg path {
+        transform: translateY(-8px);
+        transform-box: fill-box;
+      }
+
+      white-space: nowrap;
+    }
+
+    span {
+      font-weight: 700;
+      font-style: Bold;
+      font-size: 70px;
+      line-height: 70px;
+      letter-spacing: 0%;
+      text-align: center;
+      vertical-align: middle;
+      color: #d4af37;
+    }
+  }
+
+  .beck2 {
+    position: absolute;
+    left: -17%;
+    top: 0%;
+    z-index: -1000;
+    svg {
+      min-width: 100%;
+
+      /* трохи розмиття для плавності */
+      filter: blur(0.5px);
+
+      /* маска для фейду лише зліва */
+      -webkit-mask-image: linear-gradient(to right,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 1) 10%);
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: left;
+      -webkit-mask-size: cover;
+
+      mask-image: linear-gradient(to right,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 1) 10%);
+      mask-repeat: no-repeat;
+      mask-position: left;
+      mask-size: cover;
+    }
+  }
+
+  .beck3 {
+    position: absolute;
+    top: 13%;
+    left: 60%;
+  }
+
+  .mouse {
+    position: absolute;
+    top: 86%;
+    left: -8%;
+    width: 100px; // Задайте фіксований розмір контейнера
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+
+    .text-wrapper {
+      position: absolute;
+      animation: rotateText 10s linear infinite;
+      width: 100%;
+      height: 100%;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .mouse-icon {
+      position: relative;
+      z-index: 2;
+
+      // Сама мишка не крутиться
+    }
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+}
+
+@keyframes rotateText {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Move element with ID `elem-spin` left by 10px on small screens
+   and set its SVG visible width to 52px while preserving aspect ratio */
+@media (max-width: 500px) {
+  #elem-spin {
+    transform: translate(50px, 25px);
+
+    svg {
+      width: 90px;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+  }
+}
