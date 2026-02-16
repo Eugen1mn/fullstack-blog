@@ -1,7 +1,6 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from '@reduxjs/toolkit';
 import formReducer from './formReducers';
 
-// Об'єднання ред'юсерів
 const rootReducer = combineReducers({
   form: formReducer,
 });
