@@ -9,7 +9,7 @@ export default function Process() {
   return (
     <section className={styles.process}>
       <video className={styles.videoBackground} autoPlay muted loop playsInline>
-        <source src="/videos/background-video.mp4" type="video/mp4" />
+        <source src="/video/background-video.mp4" type="video/mp4" />
       </video>
 
       <div className={styles.overlay}></div>
