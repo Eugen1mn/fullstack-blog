@@ -1,0 +1,19 @@
+.blog-main {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 20px;
+
+	@media (min-width: 768px) {
+		gap: 30px;
+	}
+
+	@media (min-width: 1440px) {
+		width: 1075px;
+		gap: 70px;
+
+		.search-bar {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,29 @@
+.latest-post-item {
+	article {
+		height: 72px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		cursor: pointer;
+
+		h3 {
+			font-family: Russo One;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 100%;
+			text-transform: uppercase;
+		}
+
+		&:hover {
+			h3 {
+				color: var(--color-text-selected);
+			}
+		}
+
+		p {
+			display: flex;
+			flex-direction: column;
+			font-size: 11px;
+		}
+	}
+}

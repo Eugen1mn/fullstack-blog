@@ -1,0 +1,1 @@
+export {default as HeroSocials} from "./HeroSocials";

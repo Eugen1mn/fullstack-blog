@@ -4,10 +4,6 @@
   @media (min-width: 768px) {
     width: 92%;
   }
-  /*
-  @media (max-width: 1024px) and (min-width: 768px) {
-    width: 95%;
-  }*/
 
   @media (max-width: 767px) {
     width: 94%;
@@ -26,7 +22,7 @@
   }
 }
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 body {
   background-color: #0c0c0c;

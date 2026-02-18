@@ -1,0 +1,130 @@
+$background-color: #0c0c0c;
+$main-text-color: #d9d9d9;
+$accent-color: #d4af37;
+
+$white-color: #f6f6f6;
+$gray-color: #414141;
+$gray-color-200: #575757;
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+@mixin animLine {
+  content: '';
+  position: absolute;
+  background: linear-gradient(
+    360deg,
+    rgba(12, 12, 12, 0) 0%,
+    #ffc300 49.52%,
+    rgba(12, 12, 12, 0) 100%
+  );
+  background-size: 100% 200%;
+  animation: flow 4s linear infinite;
+}
+
+.stats {
+  margin-top: 40px;
+
+  .inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+
+    .item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 16px;
+      gap: 6px;
+      flex-grow: 1;
+
+      &::before {
+        @include animLine;
+        left: 0;
+        top: 10%;
+        bottom: 10%;
+        width: 1px;
+      }
+
+      &::after {
+        @include animLine;
+        right: 0;
+        top: 10%;
+        bottom: 10%;
+        width: 1px;
+      }
+    }
+
+    .label {
+      font-family: var(--font-montserrat);
+      font-size: 14px;
+      line-height: 1.3;
+      max-width: 140px;
+      word-break: break-all;
+    }
+
+    .value {
+      font-size: 36px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #d4af37 0%, #c89b2f 35%, #8c6a1f 70%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .stats {
+    margin-top: 50px;
+
+    .inner {
+      display: flex;
+      align-items: center;
+
+      &::before,
+      &::after {
+        height: 100px;
+        top: 50%;
+        transform: translateY(-50%);
+        bottom: auto;
+      }
+
+      .item {
+        padding: 17px 24px;
+      }
+
+      .value {
+        font-size: 46px;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .stats .inner {
+    .item {
+      padding: 56px 24px;
+    }
+
+    .label {
+      max-width: 312px;
+    }
+
+    .value {
+      font-size: 80px;
+    }
+  }
+}
+
+@keyframes flow {
+  0% {
+    background-position: 0% 200%;
+  }
+
+  100% {
+    background-position: 0% -200%;
+  }
+}

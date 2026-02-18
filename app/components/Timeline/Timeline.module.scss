@@ -1,0 +1,311 @@
+$background-color: #0c0c0c;
+$main-text-color: #d9d9d9;
+$accent-color: #d4af37;
+
+$white-color: #f6f6f6;
+$gray-color: #414141;
+$gray-color-200: #575757;
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+.timeline {
+  overflow: hidden;
+  position: relative;
+  margin-top: 40px;
+
+  :global(.container) {
+    padding-right: 0px;
+  }
+
+  .title {
+    font-size: 22px;
+    color: $accent-color;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .timelineWrapper {
+    position: relative;
+    width: 100%;
+    height: 343px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-top: 170px;
+    padding-bottom: 260px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .line {
+      position: absolute;
+      height: 230px;
+      width: 723px;
+      z-index: 1;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0px 50px 1.5px #363636);
+
+        path {
+          stroke-dasharray: 12 12;
+          stroke-width: 1;
+          filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.5));
+        }
+      }
+    }
+
+    .stepsContainer {
+      position: relative;
+      z-index: 2;
+      display: flex;
+
+      .stepItem {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 165px;
+        text-align: center;
+        flex-grow: 1;
+
+        .content {
+          margin-bottom: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .stepTitle {
+          color: $accent-color;
+          font-size: 16px;
+          margin-bottom: 8px;
+          background: linear-gradient(
+            90deg,
+            #d4af37 0%,
+            #c89b2f 35%,
+            #8c6a1f 70%
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          word-break: break-all;
+        }
+
+        .stepDesc {
+          font-size: 13px;
+          font-family: var(--font-montserrat);
+          word-break: break-all;
+        }
+
+        .verticalLine {
+          width: 1px;
+          height: 58px;
+          background: linear-gradient(
+            to top,
+            transparent,
+            rgba(255, 255, 255, 1)
+          );
+          margin-bottom: 17px;
+        }
+
+        .iconBadge {
+          width: 40px;
+          height: 40px;
+          background: rgba(26, 26, 26, 1);
+          box-shadow: 0 0 10px rgba(46, 46, 46, 1);
+          backdrop-filter: blur(40px);
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .step_1 {
+        left: 0;
+        top: -170;
+      }
+
+      .step_2 {
+        left: 53%;
+        top: 25;
+
+        flex-direction: column-reverse;
+      }
+
+      .step_3 {
+        left: 105%;
+        top: -160;
+      }
+
+      .step_4 {
+        left: 155%;
+        top: 50;
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .timeline {
+    margin-top: 50px;
+
+    .title {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    .timelineWrapper {
+      height: 343px;
+      padding-top: 170px;
+      padding-bottom: 260px;
+
+      .line {
+        height: 330px;
+        width: 1019px;
+      }
+
+      .stepsContainer {
+        .stepItem {
+          width: 267px;
+
+          .content {
+            margin-bottom: 24px;
+          }
+
+          .stepTitle {
+            font-size: 16px;
+            margin-bottom: 8px;
+          }
+
+          .stepDesc {
+            font-size: 15px;
+          }
+
+          .verticalLine {
+            width: 1px;
+            height: 36px;
+            margin-bottom: 20px;
+          }
+
+          .iconBadge {
+            width: 50px;
+            height: 50px;
+          }
+        }
+
+        .step_1 {
+          left: 0;
+          top: -150;
+        }
+
+        .step_2 {
+          left: 33%;
+          top: 25;
+
+          flex-direction: column-reverse;
+        }
+
+        .step_3 {
+          left: 63%;
+          top: -80;
+        }
+
+        .step_4 {
+          left: 98%;
+          top: 50;
+          flex-direction: column-reverse;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .timeline {
+    margin-top: 70px;
+
+    .title {
+      font-size: 46px;
+      margin-bottom: 40px;
+    }
+
+    .timelineWrapper {
+      height: 343px;
+      padding-top: 220px;
+      padding-bottom: 300px;
+
+      .line {
+        height: 280px;
+        width: 1440px;
+      }
+
+      .stepsContainer {
+        .stepItem {
+          width: 345px;
+
+          .content {
+            margin-bottom: 20px;
+          }
+
+          .stepTitle {
+            font-size: 22px;
+            margin-bottom: 12px;
+          }
+
+          .verticalLine {
+            width: 1px;
+            height: 90px;
+            margin-bottom: 45px;
+          }
+
+          .iconBadge {
+            width: 50px;
+            height: 50px;
+          }
+        }
+
+        .step_1 {
+          left: 0;
+          top: -220;
+        }
+
+        .step_2 {
+          left: 25%;
+          top: -170;
+
+          flex-direction: column;
+
+          .verticalLine {
+            margin-bottom: 0px;
+          }
+        }
+
+        .step_3 {
+          left: 50%;
+          top: -220;
+
+          .verticalLine {
+            margin-bottom: 90px;
+          }
+        }
+
+        .step_4 {
+          left: 76%;
+          top: -170;
+          flex-direction: column;
+
+          .verticalLine {
+            margin-bottom: 35px;
+          }
+        }
+      }
+    }
+  }
+}

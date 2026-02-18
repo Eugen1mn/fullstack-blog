@@ -23,7 +23,9 @@
     "urls": {
       "/#services": "Services",
       "/#portfolio": "Portfolio",
+      "/about": "About",
       "/#reviews": "Reviews",
+      "/blog": "Blog",
       "/contacts": "Contacts"
     }
   },

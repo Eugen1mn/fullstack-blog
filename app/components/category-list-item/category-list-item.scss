@@ -1,0 +1,13 @@
+.category-list-item {
+	font-size: 14px;
+	width: 100%;
+	height: 39px;
+	display: flex;
+	align-items: center;
+
+	&:hover {
+		color: var(--color-text-selected);
+		border-top: 1px solid var(--color-text-selected);
+		border-bottom: 1px solid var(--color-text-selected);
+	}
+}

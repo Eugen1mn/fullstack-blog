@@ -1,0 +1,47 @@
+$background-color: #0c0c0c;
+$main-text-color: #d9d9d9;
+$accent-color: #d4af37;
+
+$white-color: #f6f6f6;
+$gray-color: #414141;
+$gray-color-200: #575757;
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+.team {
+  margin-top: 40px;
+
+  :global(.container) {
+    padding-right: 0px;
+  }
+
+  .title {
+    color: $accent-color;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .team {
+    margin-top: 50px;
+
+    .title {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .team {
+    margin-top: 100px;
+
+    .title {
+      font-size: 40px;
+      margin-bottom: 46px;
+    }
+  }
+}

@@ -21,10 +21,12 @@
       "titleList": "що ми використовуємо у роботі"
     },
     "urls": {
-      "services": "Services",
-      "portfolio": "Portfolio",
-      "reviews": "Reviews",
-      "contacts": "Contacts"
+      "/#services": "Services",
+      "/#portfolio": "Portfolio",
+      "/about": "About",
+      "/#reviews": "Reviews",
+      "/blog": "Blog",
+      "/contacts": "Contacts"
     }
   },
   "footer": {
@@ -120,3 +122,4 @@
       "success": "Thank you! Your message has been successfully sent."
     }
   }
+}

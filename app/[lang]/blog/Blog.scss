@@ -1,0 +1,7 @@
+@use '../globals.scss' as *;
+
+.blog-page {
+  @include scoped-reset;
+
+  margin-top: 92px;
+}

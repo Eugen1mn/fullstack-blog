@@ -1,0 +1,28 @@
+.tag-filter-item {
+	button {
+		padding: 10px 0;
+		cursor: pointer;
+		font-size: 13px;
+		font-weight: 500;
+		height: 37px;
+		white-space: nowrap;
+
+		&:hover {
+			color: var(--color-text-selected);
+		}
+	}
+
+	@media (min-width: 768px) {
+		font-size: 14px;
+	}
+
+	@media (min-width: 1440px) {
+		font-size: 15px;
+	}
+}
+
+.active button {
+	padding: 10px 8px;
+	color: var(--color-text-selected);
+	border: 1px solid var(--color-text-selected);
+}

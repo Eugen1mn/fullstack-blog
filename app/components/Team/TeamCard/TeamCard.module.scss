@@ -1,0 +1,141 @@
+$background-color: #0c0c0c;
+$main-text-color: #d9d9d9;
+$accent-color: #d4af37;
+
+$white-color: #f6f6f6;
+$gray-color: #414141;
+$gray-color-200: #575757;
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+.teamCard {
+  max-width: 165px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .imageWrapper {
+    position: relative;
+    width: 165px;
+    height: 209px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .roleRow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .dot {
+        margin-left: 4px;
+        position: relative;
+        width: 23px;
+        height: 23px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          $accent-color 10%,
+          $accent-color 20%,
+          transparent 70%
+        );
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          background: $accent-color;
+          opacity: 0.2;
+          animation: pulse 1s infinite ease-out;
+        }
+      }
+
+      .roleText {
+        font-family: var(--font-montserrat);
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: lowercase;
+        word-break: break-all;
+        max-width: 134px;
+      }
+    }
+
+    .name {
+      color: $accent-color;
+      font-size: 16px;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .teamCard {
+    max-width: 272px;
+    gap: 14px;
+
+    .imageWrapper {
+      position: relative;
+      width: 272px;
+      height: 293px;
+    }
+
+    .info {
+      .roleRow {
+        .roleText {
+          font-size: 15px;
+          max-width: 240px;
+        }
+      }
+
+      .name {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .teamCard {
+    max-width: 272px;
+    gap: 20px;
+
+    .imageWrapper {
+      position: relative;
+      width: 272px;
+      height: 499px;
+    }
+
+    .info {
+      gap: 12px;
+      .roleRow {
+        .roleText {
+          font-size: 15px;
+          max-width: 240px;
+        }
+      }
+
+      .name {
+        font-size: 22px;
+      }
+    }
+  }
+}

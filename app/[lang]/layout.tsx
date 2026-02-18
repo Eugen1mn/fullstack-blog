@@ -1,8 +1,8 @@
 import { i18n, Locale } from '@/i18n.config';
-import './globals.css';
+import './globals.scss';
 //import { Mulish, Inter } from 'next/font/google';
 import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
+import { Footer } from '../components';
 import { getDictionary } from '@/lib/dictionary';
 import { TranslationProvider } from '../context/TranslationProvider';
 import Providers from '../store/providers';
@@ -54,9 +54,7 @@ export default async function RootLayout({
               <Cookies lang={lang} />
               <Modals dictionary={{ modal5: dictionary.modal5 }} />
             </main>
-            <footer>
-              <Footer lang={lang} />
-            </footer>
+            <Footer lang={lang} />
           </Providers>
         </TranslationProvider>
       </body>

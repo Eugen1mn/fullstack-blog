@@ -1,0 +1,150 @@
+$background-color: #0c0c0c;
+$main-text-color: #d9d9d9;
+$accent-color: #d4af37;
+
+$white-color: #f6f6f6;
+$gray-color: #414141;
+$gray-color-200: #575757;
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.slide {
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
+
+.navBtn {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid $accent-color;
+  background: rgba(60, 60, 60, 0.4);
+  backdrop-filter: blur(40px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover:not(.disabled) {
+    background-color: rgba(212, 175, 55, 0.2);
+  }
+
+  .nextBtn {
+    transform: rotate(180deg);
+  }
+
+  &.disabled {
+    border-color: transparent;
+    pointer-events: none;
+  }
+
+  &:first-of-type {
+    left: -10px;
+  }
+
+  &:last-of-type {
+    right: 10px;
+  }
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 2px 0;
+
+  .dot {
+    width: 5.6px;
+    height: 5.6px;
+    border-radius: 50%;
+    background: $main-text-color;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &.active {
+      background: $accent-color;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border-radius: 50%;
+        border: 0.5px solid $accent-color;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.groupedArrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 35%;
+
+  display: flex;
+  gap: 13px;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border: 1.5px solid $accent-color;
+  border-radius: 50%;
+  background: rgba(60, 60, 60, 0.4);
+  backdrop-filter: blur(40px);
+
+  transition: all 0.3s ease;
+
+  &:hover:not(.disabled) {
+    background-color: rgba(212, 175, 55, 0.2);
+  }
+
+  button {
+    display: flex;
+    background: none;
+    border: none;
+    color: $accent-color;
+    cursor: pointer;
+
+    svg {
+      cursor: pointer;
+    }
+
+    .disabled {
+      color: $gray-color;
+    }
+  }
+
+  .nextBtn {
+    transform: rotate(180deg);
+  }
+}
