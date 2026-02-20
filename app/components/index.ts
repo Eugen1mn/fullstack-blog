@@ -26,6 +26,12 @@ export { default as PopularPostItem } from './popular-post-item/popular-post-ite
 export { default as LatestPostList } from './latest-post-list/latest-post-list';
 export { default as LatestPostItem } from './latest-post-item/latest-post-item';
 
+// Post
+
+export { default as PostHero } from './post-hero/post-hero';
+export { default as BudgetLeadForm } from './budget-lead-form/budget-lead-form';
+export { default as PostContent } from './post-content/post-content';
+
 // About
 
 export * from './shared';

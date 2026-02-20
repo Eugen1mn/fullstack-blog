@@ -1,0 +1,30 @@
+@use '../../globals.scss' as *;
+.post-page {
+  @include scoped-reset;
+
+  margin-top: 92px;
+  color: var(--color-text-primary);
+
+  .post-page__layout {
+    width: 1440px;
+    margin: 100px auto 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 1440px) {
+    .post-page__layout {
+      margin-top: 50px;
+      width: 728px;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .post-page__layout {
+      margin-top: 40px;
+      width: 350px;
+      justify-content: center;
+    }
+  }
+}

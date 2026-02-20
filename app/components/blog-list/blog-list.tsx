@@ -123,7 +123,7 @@ const BlogList = () => {
   return (
     <ul className={'blog-list'}>
       {blogCards.map((card) => (
-        <BlogListItem key={card.id} {...card} />
+        <BlogListItem key={card.id} {...card} small={false} />
       ))}
     </ul>
   );

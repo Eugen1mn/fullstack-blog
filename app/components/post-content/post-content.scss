@@ -1,0 +1,234 @@
+.post-content {
+  width: 832px;
+  color: var(--color-text-primary);
+
+  button {
+    display: flex;
+    align-items: center;
+
+    span {
+      font-style: 13px;
+      font-weight: 700;
+    }
+  }
+
+  .post-content__figure {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .post-content__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    margin: 30px 0;
+    display: block;
+  }
+
+  .post-content__p {
+    margin-top: 20px;
+    font-size: 15px;
+    // letter-spacing: 1.6px;
+  }
+
+  .post-content__h2 {
+    font-family: Montserrat;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  .post-content__list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10.5px;
+  }
+  .post-content__li {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    font-size: 15px;
+  }
+
+  .post-content__tableWrap {
+    margin-top: 20px;
+  }
+
+  .post-content__table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .post-content__table thead tr,
+  .post-content__table tbody tr:not(:last-child) {
+    border-bottom: 1px solid rgba(43, 43, 43, 1);
+  }
+
+  .post-content__table th,
+  .post-content__table td {
+    padding: 20px;
+    text-align: left;
+  }
+
+  .post-content__table th:not(:last-child),
+  .post-content__table td:not(:last-child) {
+    border-right: 1px solid rgba(43, 43, 43, 1);
+  }
+
+  .post-content__table th {
+    font-weight: 600;
+  }
+
+  .post-content__related {
+    margin-top: 100px;
+
+    .post-content__relatedTitle {
+      font-family: Montserrat;
+      font-weight: 800;
+      font-size: 32px;
+      text-align: left;
+      color: var(--color-text-selected);
+    }
+
+    .post-content__recommended {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .post-content__cta {
+    margin-top: 30px;
+    border: 1px solid rgba(43, 43, 43, 1);
+    padding: 30px 24px;
+
+    h3 {
+      font-family: Montserrat;
+      font-weight: 800;
+      font-size: 22px;
+      text-transform: uppercase;
+    }
+
+    .post-content__ctaRow {
+      display: flex;
+      align-items: end;
+      gap: 40px;
+      margin-top: 20px;
+      height: 60px;
+    }
+
+    .post-content__ctaField {
+      width: 100%;
+
+      .post-content__ctaInput {
+        width: 100%;
+        height: 30px;
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--color-text-primary) !important;
+        color: var(--color-text-primary);
+        outline: none;
+
+        &:focus {
+          border-bottom-color: var(--color-text-pagination);
+        }
+      }
+    }
+  }
+
+  .post-form__submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    width: 216px;
+    height: 60px;
+    color: rgb(12, 12, 12);
+    background: var(--color-text-selected);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1;
+
+    & img:last-child {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    .post-content__related {
+      display: none;
+    }
+
+    .post-content__img {
+      height: 340px;
+    }
+
+    .post-content__h2 {
+      margin-top: 24px;
+      font-size: 18px;
+    }
+
+    .post-form__submit {
+      height: 55px;
+      color: var(--color-text-primary);
+      background: #0c0c0c;
+      border: 1.5px solid var(--color-text-selected);
+
+      & img:nth-child(2) {
+        display: none;
+      }
+
+      & img:last-child {
+        display: block;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .post-content__img {
+      height: 300px;
+    }
+
+    .post-content__p {
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    .post-content__h2 {
+      margin-top: 20px;
+    }
+
+    .post-content__list {
+      margin-top: 16px;
+    }
+
+    .post-content__li {
+      display: flex;
+      align-items: start;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .post-content__cta {
+      margin-top: 20px;
+      padding: 16px;
+
+      h3 {
+        font-size: 18px;
+      }
+
+      .post-content__ctaRow {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 16px;
+        margin-top: 16px;
+        height: auto;
+      }
+    }
+  }
+}
