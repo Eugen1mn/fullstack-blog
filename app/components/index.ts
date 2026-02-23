@@ -42,3 +42,16 @@ export * from './Team';
 export * from './Process';
 export * from './Timeline';
 export * from './Projects';
+
+// web-development
+
+export { default as WebDevelopmentHero } from './web-development-hero/web-development-hero';
+export { default as WebDevelopmentProcess } from './web-development-process/web-development-process';
+export { default as StepBadge } from './step-badge/step-badge';
+export { default as WhyUs } from './why-us/why-us';
+export { default as HowWeWork } from './how-we-work/how-we-work';
+export { default as PortfolioPromo } from './portfolio-promo/portfolio-promo';
+export { default as OurPortfolio } from './OurPortfolio/OurPortfolio';
+export { default as Contacts } from './Contacts/Contacts';
+export { default as FaqSection } from './faq-section/faq-section';
+export { default as ToolsSection } from './tools-section/tools-section';

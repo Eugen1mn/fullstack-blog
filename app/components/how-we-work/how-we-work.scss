@@ -1,0 +1,150 @@
+.how-we-work.how-we-work.how-we-work {
+  margin-top: 100px;
+
+  @media (max-width: 1440px) {
+    margin-top: 50px;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+  }
+}
+
+.how-we-work {
+  position: relative;
+
+  .container {
+    overflow: hidden;
+    position: relative;
+    width: 1440px;
+    margin: 0 auto;
+    min-height: 254px;
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font-family: Russo One;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--color-text-selected);
+  }
+
+  &__description {
+    font-size: 15px;
+    max-width: 588px;
+  }
+
+  .how-we-work__steps {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 60px;
+  }
+
+  .how-we-work__step {
+    min-width: 240px;
+    height: 99px;
+    display: flex;
+    align-items: end;
+    position: relative;
+
+    .how-we-work__badge,
+    hr,
+    .how-we-work__arrow {
+      position: absolute;
+    }
+
+    .how-we-work__badge {
+      top: 0;
+      z-index: 1;
+    }
+
+    .how-we-work__badge01,
+    .how-we-work__badge02,
+    .how-we-work__badge03 {
+      top: 9.5px;
+    }
+
+    hr {
+      width: 1440px;
+      height: 1px;
+      background: rgba(255, 255, 255, 1);
+      top: 35px;
+    }
+
+    .how-we-work__arrow {
+      display: block;
+      top: 25px;
+      left: 87px;
+    }
+  }
+
+  .how-we-work__step-title {
+    width: 150px;
+    font-size: 15px;
+  }
+
+  @media (max-width: 1440px) {
+    .container {
+      width: 728px;
+    }
+
+    &__header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+
+    .how-we-work__steps {
+      margin-top: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      width: 350px;
+    }
+
+    &__header {
+      gap: 8px;
+    }
+
+    &__title {
+      font-size: 22px;
+    }
+
+    &__description {
+      font-size: 14px;
+    }
+
+    .how-we-work__steps {
+      margin-top: 20px;
+    }
+
+    .how-we-work__step {
+      hr {
+        top: 27px;
+      }
+
+      .how-we-work__arrow {
+        display: block;
+        top: 17px;
+        left: 240px;
+      }
+    }
+  }
+}

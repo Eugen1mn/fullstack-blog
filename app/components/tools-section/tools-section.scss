@@ -1,0 +1,52 @@
+.tools-section.tools-section.tools-section {
+  margin-bottom: 100px;
+
+  @media (max-width: 1440px) {
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+
+.tools-section {
+  .container {
+    width: 1440px;
+    margin: 0 auto;
+  }
+
+  .tools-section__title {
+    font-family: Russo One;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--color-text-selected);
+    text-align: left;
+  }
+
+  .totools-section__list {
+    margin-top: 40px;
+  }
+
+  @media (max-width: 1440px) {
+    .container {
+      width: 728px;
+    }
+
+    .tools-section__title {
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      width: 350px;
+    }
+
+    .tools-section__title {
+      font-size: 22px;
+    }
+  }
+}
